@@ -1,24 +1,75 @@
+@use "../Utils/colors" as *;
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-size: 16px;
+    // overflow-x: hidden;
 
 }
 
 h1{
-    font-size: 5rem;
+    font-size: 4rem;
 
 }
 
 h2{
     font-size: 2.5em;
+    font-family: "Centaur",sans-serif;
 
 }
 
 
-    p{
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+p{
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html{
+    overflow-x: hidden;
+}
+
+h2{
+    // margin-top: 100px;
+    position: relative;
+    display: block;
+    margin: auto;
+    text-align: center;
+    color: $subtitle;
+    padding: 1rem;
+    transition: all 0.3s ease 0s;
+
+
+    
+
+    &::before{
+        content: "";
+        background-color:$backgroundCompetences;
+        height: 15px;
+        width: 100%;
+        position: absolute;
+        top: 33px;
+        left: -65vw;
+        border-radius: 25px;
+        
+
+    
     }
 
     
+
+    &::after{
+        content: "";
+        background-color:$backgroundCompetences;
+        height: 15px;
+        width: 100%;
+        position: absolute;
+        top: 33px;
+        right: -65vw;
+        border-radius: 25px;
+        
+
+    
+    }
+}
+

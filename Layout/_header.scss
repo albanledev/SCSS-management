@@ -1,0 +1,29 @@
+@use "../Utils/mixins" as *;
+@use "../Utils/colors" as *;
+
+nav{
+    background-color:$vert;
+    padding: 1rem 2rem;
+    width: 100%;
+    height: 10vh;
+    @include flex(center,center,10vw);
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    
+
+    ul{
+        display: flex;
+        gap: 10vw;
+        list-style-type: none;
+
+        li{
+            a{
+                color: white;
+                text-decoration: none;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+        }
+    }
+
+}

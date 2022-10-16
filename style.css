@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -6,15 +7,50 @@
 }
 
 h1 {
-  font-size: 5rem;
+  font-size: 4rem;
 }
 
 h2 {
   font-size: 2.5em;
+  font-family: "Centaur", sans-serif;
 }
 
 p {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+h2 {
+  position: relative;
+  display: block;
+  margin: auto;
+  text-align: center;
+  color: #9D3625;
+  padding: 1rem;
+  transition: all 0.3s ease 0s;
+}
+h2::before {
+  content: "";
+  background-color: #85A2B8;
+  height: 15px;
+  width: 100%;
+  position: absolute;
+  top: 33px;
+  left: -65vw;
+  border-radius: 25px;
+}
+h2::after {
+  content: "";
+  background-color: #85A2B8;
+  height: 15px;
+  width: 100%;
+  position: absolute;
+  top: 33px;
+  right: -65vw;
+  border-radius: 25px;
 }
 
 @font-face {
@@ -36,4 +72,261 @@ p {
 @font-face {
   font-family: "Segoe UI";
   src: url("/font/Segoe UI.ttf") format("truetype");
+}
+nav {
+  background-color: #75840F;
+  padding: 1rem 2rem;
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10vw;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+}
+nav ul {
+  display: flex;
+  gap: 10vw;
+  list-style-type: none;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.gridFooter {
+  display: grid;
+  grid-template-rows: repeat(auto-fill, auto);
+  grid-template-columns: repeat(auto-fill, 600px);
+  width: 100%;
+  max-width: 1300px;
+  height: 100vh;
+  gap: 20px;
+  margin: auto;
+  justify-content: center;
+}
+.gridFooter .gg {
+  margin-bottom: 20px;
+}
+.gridFooter div {
+  cursor: pointer;
+}
+.gridFooter div:hover {
+  -webkit-animation-name: blurProgressif;
+          animation-name: blurProgressif;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+.gridFooter div img {
+  width: 600px;
+}
+.gridFooter .montagne img {
+  height: 400px;
+  width: 600px;
+}
+
+button {
+  padding: 0.5rem;
+  border-radius: 25px;
+  background-color: #182E55;
+  transition: all 0.3s ease 0s;
+}
+button:hover {
+  transform: scale(1.2, 1.2);
+  transition: all 0.3s ease 0s;
+}
+button a {
+  color: white;
+  text-decoration: none;
+}
+
+.parentVideo {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+video {
+  position: absolute;
+  min-height: 100%;
+  min-width: 100%;
+  top: 50%;
+  left: 50%;
+  z-index: -100;
+  transform: translate(-50%, -50%);
+  /* filter: blur(10px); */
+  -webkit-animation-name: blurProgressif;
+          animation-name: blurProgressif;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes blurProgressif {
+  0% {
+    filter: blur(0px);
+  }
+  100% {
+    filter: blur(10px);
+  }
+}
+
+@keyframes blurProgressif {
+  0% {
+    filter: blur(0px);
+  }
+  100% {
+    filter: blur(10px);
+  }
+}
+.title {
+  background-color: red;
+  isolation: isolate;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  position: relative;
+}
+.title::after {
+  position: absolute;
+  content: "";
+  inset: -1em;
+  filter: blur(30px);
+  background-color: rgb(34, 34, 107);
+  z-index: -1;
+  isolation: isolate;
+  opacity: 0.5;
+}
+.title h1 {
+  text-align: center;
+  margin-top: 10vw;
+  font-family: "Dancing Script", cursive;
+  font-style: italic;
+  padding: 1rem 2rem;
+  width: auto;
+  color: whitesmoke;
+}
+
+b {
+  display: inline-block;
+  color: #18344c;
+  cursor: default;
+}
+
+b::after {
+  content: "";
+  display: block;
+  position: relative;
+  width: 0%;
+  height: 3px;
+  background: #18344c;
+  transition: width 0.3s ease-in-out;
+}
+
+b:hover::after {
+  width: 100%;
+}
+
+main {
+  margin-top: 5vh;
+}
+main p {
+  width: 70%;
+  max-width: 1300px;
+  margin: auto;
+  text-align: center;
+}
+main .pres p {
+  width: 50%;
+  max-width: 1300px;
+  margin: auto;
+  text-align: left;
+}
+main .pres .flex1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 5vw;
+  margin-top: 50px;
+}
+main .pres .flex1 p {
+  margin-top: 30px;
+  width: 70%;
+  max-width: 1300px;
+  margin: auto;
+  text-align: left;
+}
+main .pres .flex1:nth-child(2) {
+  width: 100%;
+  max-width: 800px;
+}
+main .pres .flex1 div img {
+  width: 650px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 25px;
+}
+main .pres .flex2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 5vw;
+  margin-top: 30px;
+}
+main .pres .flex2 div > p {
+  margin-top: 30px;
+  width: 70%;
+}
+main .pres .flex2 div > img {
+  width: 650px;
+  border-radius: 25px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+main .presentation {
+  width: 100%;
+  margin: auto;
+  margin-top: 30px;
+}
+
+@media screen and (max-width: 750px) {
+  h2 {
+    font-size: 2rem;
+    transition: all 0.3s ease 0s;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .flex1, .flex2 {
+    flex-wrap: wrap;
+  }
+  .flex1 div, .flex2 div {
+    margin: auto;
+  }
+  .flex1 div img, .flex2 div img {
+    width: cover;
+    transform: translateX(-75px);
+  }
+  .flex1 div p, .flex2 div p {
+    margin: auto;
+  }
+  .flex2 div:nth-child(2) {
+    order: -1;
+  }
+}
+.marineP {
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+}
+.marineP .flexMat {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
 }/*# sourceMappingURL=style.css.map */

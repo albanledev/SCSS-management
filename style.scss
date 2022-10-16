@@ -1,1 +1,251 @@
 @use 'Utils/index' as * ;
+
+
+.parentVideo{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+  video{
+    position: absolute;
+    min-height: 100%;
+    min-width: 100%;
+    top: 50%;
+    left: 50%;
+    z-index: -100;
+    transform: translate(-50%, -50%);
+    /* filter: blur(10px); */
+    animation-name: blurProgressif;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    
+
+
+  }
+
+  @keyframes blurProgressif{
+    0%{
+        filter: blur(0px);
+    }
+
+    100%{
+        filter: blur(10px);
+    }
+}
+  
+
+    
+
+    // &::after{
+    //     content: "ez";
+    //     width: 100%;
+    //     // height: ;
+    //     background-color: aliceblue;
+    //     position: absolute;
+    //     isolation: isolate;
+
+    // }
+
+
+.title{
+    background-color: red;
+    isolation: isolate;
+    width: fit-content;
+    margin: auto;
+    position: relative;
+    
+
+    &::after{
+        position: absolute;
+        content: "";
+        inset: -1em;
+        filter: blur(30px);
+        background-color: rgb(34, 34, 107);
+        z-index: -1;
+        isolation: isolate;
+        opacity: 0.5;
+
+        
+    }
+
+    h1{
+        text-align: center;
+        margin-top: 10vw;
+        
+        font-family: 'Dancing Script', cursive;
+        font-style: italic;
+        padding: 1rem 2rem;
+        width: auto;
+        color: whitesmoke;
+    }
+
+}
+
+
+b{
+    display: inline-block;
+    color: $surlignage;
+    cursor:default;
+  }
+  b::after
+  {
+    content:"";
+    display:block;
+    position:relative;
+    width:0%;
+    height:3px;
+    background:$surlignage;
+    transition:width 0.3s ease-in-out;
+  }
+  
+  b:hover::after{
+  width: 100%;
+  }
+
+main{
+    margin-top: 5vh;
+
+    p{
+        width: 70%;
+        max-width: 1300px;
+        margin: auto;
+        text-align:center ;
+    }
+
+.pres{
+    // display: grid;
+    // grid-template-columns: 50% 50%;
+    // grid-template-rows: 50% 50%;
+    // margin-top: 50px;
+
+    
+    p {
+        // color: $blue;
+        width: 50%;
+        max-width: 1300px;
+        margin: auto;
+        text-align:left ;
+    }
+
+.flex1{
+    @include flex(space-between,flex-start,5vw);
+    // flex-wrap: wrap;
+    margin-top: 50px;
+
+    // @media screen and (max-width:) {
+    // }
+
+
+    p {
+        // color: $blue;
+        margin-top: 30px;
+        width: 70%;
+        max-width: 1300px;
+        margin: auto;
+        text-align:left ;}
+    &:nth-child(2){
+        width: 100%;
+        max-width: 800px;
+    }
+
+    div{
+        img{
+            width: 650px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            border-radius: 25px
+        }
+}
+            
+        }
+
+        .flex2{
+            @include flex(space-between,flex-start,5vw);
+            margin-top:30px;
+
+            div>p{
+                margin-top: 30px;
+                width: 70%;
+            }
+
+            div>img{
+                width: 650px;
+                border-radius: 25px;
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            }
+        }
+
+
+
+
+    }
+
+
+
+
+
+    // + p {
+    //     color: $blue;
+    //     width: 40%;
+    //     max-width: 800px;
+    //     // margin: auto;
+    //     text-align: left;
+    // }
+
+    .presentation{
+        
+        width: 100%;
+        margin: auto;
+        margin-top: 30px;
+
+
+
+    }
+}
+
+
+@media screen and (max-width:750px) {
+    h2{
+        font-size: 2rem;
+        transition: all 0.3s ease 0s;
+    }
+    
+}
+
+@media screen and (max-width:1200px) {
+    .flex1,.flex2{
+        flex-wrap: wrap;
+        div{
+            margin: auto;
+
+            img{
+                width: cover;
+                transform: translateX(-75px);
+            }
+
+            p{
+                margin: auto;
+            }
+        }
+    }
+    
+    .flex2{
+        div:nth-child(2){
+            order: -1;
+        }
+    }
+}
+
+
+
+.marineP{
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+
+    .flexMat{
+        @include flex(center,flex-start,10px);
+    }
+}
